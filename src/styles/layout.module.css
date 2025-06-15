@@ -1,21 +1,22 @@
 .gridContainer {
     display: grid;
-    grid-template-columns: auto;
     grid-template-rows: auto auto auto;
     font-family: sans-serif;
-    background-color: #081C15;
+    background-color: #84d0b5;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
   }
 
-  .gridMain {
+  /*.gridMain {
     background-color: #081C15;
   }
 
   .gridFooter {
-    background-color: #1B4332;
+    /*background-color: #1B4332;
   }
   
   .heading {
     color: rebeccapurple;
   }
+  */

@@ -5,22 +5,27 @@ import {
     navLinkItem,
     navLinks,
     navLinkText
-} from './header.module.css'
+} from '../styles/header.module.css'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const Header = () => {
   return (
     <div className={gridHeader}>
       <nav>
         <ul className={navLinks}>
-          <li className={navLinkItem}>
-            <Link to="/" className={navLinkText}>
-              Página Principal
-            </Link>
+          <li>
+            <StaticImage 
+              src="../images/perfil.jpg" 
+              alt="Foto de perfil"
+              placeholder="blurred"
+              width={100}
+              height={100} 
+            />
           </li>
           <li className={navLinkItem}>
-            <Link to="/" className={navLinkText}>
-              Hoja De Vida
-            </Link>
+            <h1 className={navLinkText}>
+              John Orlando Vásconez Varas
+            </h1>
           </li>
           <li className={navLinkItem}>
             <Link to="/about" className={navLinkText}>

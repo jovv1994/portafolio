@@ -1,0 +1,16 @@
+html {
+    display: grid;
+    background-color: red;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gridContainer {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    font-family: sans-serif;
+    background-color: black;
+    min-height: 100vh;
+    margin: 100;
+    padding: 100;
+  }
