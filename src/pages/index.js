@@ -1,11 +1,12 @@
 import * as React from 'react'
-import * as gridContainer from '../components/index.module.css'
+import Chip from '../components/chip.jsx'
+import Layout from "../components/layout"
 
 const IndexPage = () => {
   return (
-    <div className={gridContainer} pageTitle="Home Page">
-      <p className={gridContainer}>I'm making this by following the Gatsby Tutorial.</p>
-    </div>
+    <Layout>
+      <Chip/>
+    </Layout>
   )
 }
 

@@ -1,21 +1,19 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
-import Header from './header'
-import Footer from './footer'
-import {
-  gridContainer
-} from '../styles/layout.module.css'
+import React from 'react'
+import { createGlobalStyle } from "styled-components"
 
-const Layout = ({children }) => {
+const GlobalStyle = createGlobalStyle`
+  html, body {
+    background-color: #0B0E20;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+  }
+`
+export default function Layout({ children }) {
   return (
-    <div className={gridContainer}>
-      <Header/>
-
+    <React.Fragment>
+      <GlobalStyle/>
       {children}
-
-      <Footer/>
-    </div>
+    </React.Fragment>
   )
 }
-
-export default Layout
