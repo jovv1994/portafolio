@@ -10,14 +10,12 @@ const OuterBorder = styled.div`
     margin: auto;
 `
 
-const Track = () => {
+const Track = ({ points }) => {
     return (
-        <>
-            <svg height="210" width="500" xmlns="http://www.w3.org/2000/svg">
-                <polyline points="0,0 50,150 100,75 150,50 200,140 250,140"
-                    style={{fill:"none",stroke:"green",strokeWidth:3}} />
-            </svg>
-        </>
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <polyline points={points}
+                style={{ fill: "none", stroke: "green", strokeWidth: 1 }} />
+        </svg>
     );
 };
 

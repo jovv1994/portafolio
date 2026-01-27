@@ -7,8 +7,8 @@ const OuterBorder = styled.div`
     width: fit-content;
     border: 2px solid #4CC9F0;
     background-color: #0B0E20;
-    border-radius: 4px;
-    padding: 4px;
+    border-radius: 10px;
+    padding: 2px;
     margin: auto;
 `
 
@@ -28,7 +28,8 @@ const Content = styled.div`
 const Chip = () => {
     return (
         <>
-            <Track />
+            <Track points={"0,10 200,10 210,25 210,100 100,100 100,115"}/>
+            <Track points={"0,50 50,30 210,25 210,100 100,100 100,115"}/>
             <OuterBorder>
                 <InnerBorder>
                     <Content>
@@ -36,8 +37,8 @@ const Chip = () => {
                             src="../images/icon.png"
                             alt="Avatar"
                             layout="fixed"
-                            width={200}
-                            height={200}
+                            width={150}
+                            height={150}
                         />
                     </Content>
                 </InnerBorder>
