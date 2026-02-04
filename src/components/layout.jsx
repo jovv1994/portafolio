@@ -1,5 +1,6 @@
 import React from 'react'
-import { createGlobalStyle } from "styled-components"
+import styled from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -9,11 +10,19 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
   }
 `
+
+const GridContainer = styled.div`
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+`;
+
 export default function Layout({ children }) {
   return (
-    <React.Fragment>
-      <GlobalStyle/>
+    <GridContainer>
+      <GlobalStyle />
       {children}
-    </React.Fragment>
+    </GridContainer>
   )
 }
