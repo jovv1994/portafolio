@@ -1,20 +1,77 @@
 import React from "react";
 import styled from "styled-components"
-import { StaticImage } from "gatsby-plugin-image"
 
-const ChipSegment = styled.div`
-    border-top: ${props => props.$styleTop === "solid" ? "2px solid #4CC9F0" : "none"};
-    border-bottom: ${props => props.$styleBottom === "solid" ? "2px solid #4CC9F0" : "none"};
-    border-left: ${props => props.$styleLeft === "solid" ? "2px solid #4CC9F0" : "none"};;
-    border-right: ${props => props.$styleRight === "solid" ? "2px solid #4CC9F0" : "none"};
-    border-radius: 5px;
-    padding: 20px;
-    justify-self: ${({ $justifyDirection }) => $justifyDirection};
-    align-self: ${({ $alignDirection }) => $alignDirection};
-    width: 50px;
-    height: 50px;
-`
+const SVG = styled.svg`
+    padding: 10px;
+`;
 
-export default function Chip({ $styleTop, $styleBottom, $styleLeft, $styleRight, $justifyDirection, $alignDirection }) {
-    return <ChipSegment $styleTop={$styleTop} $styleBottom={$styleBottom} $styleLeft={$styleLeft} $styleRight={$styleRight} $justifyDirection={$justifyDirection} $alignDirection={$alignDirection} />;
-};
+const OuterBorderChip = styled.rect`
+    fill: none;
+    stroke: #4CC9F0;
+    stroke-width: 2;
+    margin: 5px;
+`;
+
+const InnerBorderChip = styled.rect`
+    fill: none;
+    stroke: #4CC9F0;
+    stroke-width: 2;
+`;
+
+const CenterChip = styled.rect`
+    fill: #4CC9F0;
+`;
+
+export default function Chip() {
+    return (
+        <SVG
+            width="210"
+            height="210"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <OuterBorderChip
+                width="200"
+                height="200"
+                rx="10"
+                ry="10"
+                x="5"
+                y="5"
+            >
+                <animate
+                    attributeName="cx"
+                    begin="0s"
+                    dur="8s"
+                    from="50"
+                    to="90%"
+                    repeatCount="indefinite" />
+            </OuterBorderChip>
+
+            <InnerBorderChip
+                width="190"
+                height="190"
+                rx="10"
+                ry="10"
+                x="10"
+                y="10"
+            />
+
+            <defs>
+                <filter id="f1" width="120" height="120">
+                    <feOffset in="SourceGraphic" />
+                    <feGaussianBlur stdDeviation="10" />
+                    <feBlend in="SourceGraphic" in2="blurOut" />
+                </filter>
+            </defs>
+
+            <CenterChip
+                width="160"
+                height="160"
+                rx="10"
+                ry="10"
+                x="25"
+                y="25"
+                filter="url(#f1)"
+            />
+        </SVG>
+    )
+}

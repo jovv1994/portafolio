@@ -12,10 +12,11 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const GridContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  position: relative;
 `;
 
 export default function Layout({ children }) {

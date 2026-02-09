@@ -6,10 +6,7 @@ import Track from "../components/track";
 export default function Index() {
   return (
     <Layout>
-      <Chip $styleTop="solid" $styleLeft="solid" $justifyDirection="right" $alignDirection="end"/>
-      <Chip $styleTop="solid" $styleRight="solid" $justifyDirection="left" $alignDirection="end"/>
-      <Chip $styleBottom="solid" $styleLeft="solid" $justifyDirection="right" $alignDirection="start"/>
-      <Chip $styleBottom="solid" $styleRight="solid" $justifyDirection="left" $alignDirection="start"/>
+      <Chip />
     </Layout>
   )
 }
