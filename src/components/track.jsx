@@ -8,7 +8,8 @@ const Svg = styled.svg`
 const Track = ({ points }) => {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg">
-            <polyline points={points}/>
+            <path d="M0-0 L100 200 0"
+                style={{fill:"none", stroke:"#4CC9F0", strokeWidth:2}} />
         </Svg>
     );
 };

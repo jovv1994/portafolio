@@ -19,7 +19,7 @@ const InnerBorderChip = styled.rect`
 `;
 
 const CenterChip = styled.rect`
-    fill: #4CC9F0;
+    
 `;
 
 export default function Chip() {
@@ -56,11 +56,16 @@ export default function Chip() {
             />
 
             <defs>
-                <filter id="f1" width="120" height="120">
+                <filter id="f1" width="180" height="1000">
                     <feOffset in="SourceGraphic" />
-                    <feGaussianBlur stdDeviation="10" />
+                    <feGaussianBlur stdDeviation="20" />
                     <feBlend in="SourceGraphic" in2="blurOut" />
+
                 </filter>
+                <linearGradient id="grad5" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#FF4D6D" />
+                    <stop offset="100%" stop-color="#4CC9F0" />
+                </linearGradient>
             </defs>
 
             <CenterChip
@@ -71,6 +76,7 @@ export default function Chip() {
                 x="25"
                 y="25"
                 filter="url(#f1)"
+                fill="url(#grad5)"
             />
         </SVG>
     )
