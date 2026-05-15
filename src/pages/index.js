@@ -27,7 +27,6 @@ export default function Index() {
     <MainContainer>
       <GlobalStyle />
       <Track />
-      <Chip />
     </MainContainer>
   )
 }
